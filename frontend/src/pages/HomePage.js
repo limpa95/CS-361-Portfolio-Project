@@ -39,7 +39,7 @@ function HomePage() {
                     </dd>
                     <dt><strong>React</strong></dt>
                     <dd>React is used for this website's frontend. It is a framework used for frontend applications that updates the DOM and minimizes the rendering for the browser. Pages are thus built with components instead of HTML directly, updates are
-                        made trough states, and it turns this app into a single page application (SPA).
+                        made through states, and it turns this app into a single page application (SPA).
                     </dd>
                 </dl>
             </p>
