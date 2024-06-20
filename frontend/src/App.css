@@ -1,0 +1,502 @@
+/*  ===== MOBILE styles (reside at the top and are inherited by all devices) ===== */
+/*  ===== See tablet, desktop, and print @media queries at the bottom. */
+
+
+/*   ----- Imports  -----  */
+  /* @import 'node_modules/modern-normalize/modern-normalize.css';  npm install modern-normalize  Resets elements for browser consistency.  https://www.npmjs.com/package/modern-normalize */         
+  /* @import "component1.css";   Component-specific stylesheets, if any.   */
+  @import url('https://fonts.googleapis.com/css2?family=Teko:wght@600&family=Titillium+Web:wght@300;600&display=swap');
+  @import "~react-image-gallery/styles/css/image-gallery.css";
+
+  /*   ----- Variables  -----  */
+  :root {
+      --cloudWhite: #DEEDF7d9;
+      --stoneGray: #101200;
+      --skyBlue: #5FA0D9;
+      --babyBlue: #6EC4FA;
+      --fadedBlue: #6EC4FA17;
+      --leafGreen: #385E01;
+      --vomitGreen: #888C03;
+      --custom-embellishment-name:;
+    }
+    
+    /*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+    body {       /* Can alternatively define in html {}. */
+      background-color:var(--stoneGray);
+      background-image: url(images/japan-sky-background.jpg);
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: 0% 40%;
+      background-repeat:no-repeat;
+      color:var(--stoneGray);
+      font-family:'Titillium Web', sans-serif; /* Define with at least one font name and its related generic family name.*/
+      margin:0% 5% 0% 5%;
+      padding:0% 5% 0% 5%;
+      max-width:100%;
+    }
+    
+    /*  ----- Page layout blocks -----  */
+    header {
+      background-color:var(--skyBlue);
+      margin:0% 20% 1% 20%;
+      padding: 1% 2% 1% 2%;
+      border-right: 1px solid var(--stoneGray);
+      border-bottom: 1px solid var(--stoneGray);
+      border-left: 1px solid var(--stoneGray);
+    }
+    .headingCentered{text-align: center}
+    .iconCentered{display: block; margin-left: auto; margin-right: auto}
+    main {
+      background-color:var(--cloudWhite);
+      padding: 1% 4% 1% 4%;
+      margin-top: 1%;
+      border-top: 1px solid var(--stoneGray);
+      border-right: 1px solid var(--stoneGray);
+      border-left: 1px solid var(--stoneGray);
+    }
+    section {}
+    article {}
+  
+    .homepage{border-top: 4px solid var(--leafGreen);}
+  
+      #topic1 {}
+      #topic2 {}
+    div {}
+    aside {}
+    footer {
+      background-color:var(--skyBlue);
+      padding: 1% 2% 2% 2%;
+      border: 1px solid var(--stoneGray);
+    }
+    .footerCentered{text-align: center}
+  
+    .galHeadCentered{text-align: center}
+
+    .feature-box-flex {
+      display: flex;
+    }
+    
+    .features-box {
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      color: var(--stoneGray);
+      background-color:color-mix(in srgb, var(--skyBlue), transparent 60%);
+      height: 100%;
+      width: 70%;
+      margin-top: 2%;
+      margin-bottom: 3%;
+      margin-left: 20%;
+      padding: 1% 1% 1% 3%;
+      position: relative;
+      
+      box-shadow: 0px 1px 5px #999;
+      }
+
+      .costs-box {
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        color: var(--stoneGray);
+        background-color:color-mix(in srgb, var(--skyBlue), transparent 60%);
+        height: 100%;
+        margin: 2% 25% -10% 2%;
+        padding: 1% 1% 3% 3%;
+        position: relative;
+        
+        box-shadow: 0px 1px 5px #999;
+        }
+
+      .count {
+        margin-top: -3%;
+        margin-left: 85%;
+      }
+
+      .deleteAll {
+        margin-top: -3%;
+        margin-left: 11%
+      }
+    
+    /*.gallery{
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .gallery figure{
+      width: 320px;
+      margin: .75%;
+      padding:0;
+    }
+  
+    .gallery img {
+      display: block;
+      width:80%;
+      border: 1px solid var(--stoneGray);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  
+    .gallery figcaption {
+      display:block;
+      padding:3px;
+      text-align: center
+    }
+    */
+
+    /* ----- React Gallery Styling ----- */
+
+    .image-gallery-description { 
+      bottom:-60px!important; 
+      position:relative!important;
+      display: block!important;
+      white-space:initial!important;
+      background-clip:content-box!important;
+      background-color:var(--leafGreen)!important;
+      color:var(--cloudWhite)!important;
+      padding: 10px 100px!important;
+      line-height: 2!important;
+      font-size:1.1em!important;
+    
+    }
+    .image-gallery-slide { margin-bottom:150px!important; } 
+
+    /* ----- Anchors ----- Text links */
+    a {}
+    a:link {}
+    a:hover {}
+    a:active {}
+    a:visited {}
+    
+    /*  ----- Navigation ----- Override text links for navigation only.  */
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+  }
+    nav a {
+      background-color:var(--leafGreen);
+      border:2px solid var(--stoneGray);
+      border-radius:5px 5px 0 0; 
+      color:var(--cloudWhite);
+      font-size:1.1em;
+      font-weight:bold;
+      margin-right:3px;
+      margin-bottom:3px;
+      padding: 3px 20px 5px 20px;
+      text-decoration:none;
+    }
+    nav a:hover {
+      background-color:var(--cloudWhite);
+      color:var(--stoneGray);
+    }
+  
+    .local {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+  }
+  
+    .local a {
+      background-color:var(--vomitGreen);
+      border:2px solid var(--stoneGray);
+      border-radius:5px 5px 0 0; 
+      color:var(--stoneGray);
+      font-size:1.1em;
+      font-weight:bold;
+      margin-top:-10px;
+      margin-right:3px;
+      margin-bottom:20px;
+      padding: 3px 20px 5px 20px;
+      text-decoration:none;
+    }
+  
+    .local a:hover{
+      background-color:var(--babyBlue);
+      color:var(--stoneGray);
+    }
+  
+    
+    /*  -----  Typography  ----- */
+    p {}
+    br {}
+    ol, ul, dl {}
+    li {}
+    dt {}
+    dd {}
+    
+    h1, h2, h3, h4, h5, h6 {font-family: 'Teko', sans-serif;} 
+    h1 {}
+    h2 {}
+    h3 {}
+    h4 {}
+    h5 {}
+    h6 {}
+    
+    abbr {}
+    acronym {}
+    address {}
+    blockquote {}
+      q {}
+      cite {}
+    em {}
+    hr {}
+    mark {}
+    s {}
+    span {}
+    strong {}
+    sub {}
+    sup {}
+    time {}
+    
+    /*  ----- Coding or instructional typography ----- */
+    pre {}
+    code {}
+    kbd {}
+    samp {}
+    var {}
+    del {} 
+    ins {}
+    
+    /*  ----- Table ----- */
+    table {
+      border-collapse:collapse;
+      width: 100%;
+      margin: 0 0 0 0%;
+    
+    }
+    caption {
+      margin: 0 0 0 0;
+    }
+    thead {
+      text-align: left;
+    }
+    tbody {
+      max-width:70%;
+    }
+
+    #deck{
+      height: 350px;
+      }
+    
+    @media (max-width: 600px) {
+      #deck {
+        display: block;
+        max-width: fit-content;
+        margin: 0 auto;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      #deck td {height: 50px;}
+    }
+
+
+
+
+    #addDeck input[type="number"], input[type="text"], *:required{
+      height: 40px
+    }
+
+    #addDeck button[type="submit"]{
+      margin: 25px 0 0 20px
+    }
+
+    #cards button[type="submit"]{
+      margin: 25px 0 0 20px
+    }
+
+
+    tfoot {}
+    tr {}
+      tr:nth-child(even) {}
+    th {}
+    td {}
+      td:nth-child(1) {}
+    colgroup {}
+    data {}
+    datalist {}
+    
+    
+    /*  ----- Form ----- */
+    form {}
+    fieldset {
+      border: 2px solid var(--leafGreen);
+      margin-bottom: 2%;
+      padding: 1% 3% 1% 3%;
+    }
+      legend {
+        text-align: center;
+        color: var(--leafGreen);
+        font-size:1.2em;
+        font-weight:bold;
+        border-bottom: 1px solid var(--stoneGray)
+      }
+    label {
+      display: block;
+      margin-top: 2%;
+    }
+  
+    #quantityLabel {
+      margin: 4% 0 1% 5%;
+    }
+  
+    #quantity {
+      border: 2px solid var(--vomitGreen);
+      margin: 0 0 0 5%;
+    }
+
+    #reactQuantity {
+      margin: 0 5% 0 5%;
+    }
+
+    .reactIcons {
+      display: flex;
+      align-items: center;
+    }
+  
+    button, input, select, option, textarea {
+      font-size: 105%;
+      padding: 1.5%;
+      font-family:inherit;
+    }
+    
+  button {
+    border: 2px solid var(--vomitGreen);
+    font-size: 110%;
+    background-color: var(--cloudWhite);
+    color: var(--stoneGray);
+  }
+  
+  button:hover {
+    color: var(--leafGreen);
+    background-color: var(--babyBlue);
+  }
+  
+  #submitOrder {
+    border: 2px solid var(--vomitGreen);
+    font-size: 110%;
+    background-color: var(--cloudWhite);
+    color: var(--stoneGray);
+    margin: 0 0 0 42%;
+    
+  }
+  
+  #submitOrder:hover {
+    color: var(--leafGreen);
+    background-color: var(--babyBlue);
+  }
+  
+  input[type="text"], input[type="email"] {
+    width: 97%;
+  }
+  
+  textarea {
+    width: 97%;
+    height: 150px;
+  }
+  
+  input[type="number"] {
+    width: 90px;
+    height: 40px;
+  }
+  
+  input[type="checkbox"]:checked {
+    color: var(--leafGreen);
+    font-style: italic;
+  } 
+  
+  *::placeholder {
+    color: var(--vomitGreen);
+  }
+  
+  *:required {
+    border: 2px dotted var(--leafGreen);
+  }
+  
+  label.required:after {
+    content:" *";
+    color:red;
+  }
+  
+  :focus {
+    background-color: var(--fadedBlue);
+  }
+  
+      optgroup {}
+      option {}
+    
+    output {}
+    meter {}
+    progress {}
+    
+    
+    /* ----- Media ----- */
+    #card-display {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      flex-basis: 80%;
+      z-index:999; 
+      cursor: pointer; 
+      -webkit-transition-property: all; 
+      -webkit-transition-duration: 0.3s; 
+      -webkit-transition-timing-function: ease; 
+    }
+
+    #card-display:hover { 
+      transform: scale(1.3); 
+    }
+
+    #card-display img{
+      width: 25%;
+      height: 25%; 
+    }
+
+    figure {}
+      figcaption {}
+      figure img {}
+    svg {}
+    .reactSvg svg{height: 16px}
+    picture {}
+      source {}
+    iframe {}
+    video {}
+    audio {}
+    embed {}
+    object {}
+    
+    /*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation -----  */
+    .gallery {}
+    
+    .floatright {}
+    .floatleft {}
+    .center-middle {}
+    
+    .ten {}
+    .twenty {}
+    .thirty {}
+    .forty {}
+    .fifty {}
+    .sixty {}
+    .seventy {}
+    .eighty {}
+    
+    .radius {}
+    .circle {}
+    .boxshadow {}
+    .tshadow {} 
+    .gradient {}
+    .shape {}
+    
+    @keyframes App-logo {}
+    
+    /*   ===== TABLET  media query overrides mobile styles ===== */
+    @media all and (min-width: 600px) {}
+    
+    /*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+    @media all and (min-width: 1080px) {}
+    
+    /*   ===== PRINT  media query overrides previous styles =====  */
+    @media print {}
+    

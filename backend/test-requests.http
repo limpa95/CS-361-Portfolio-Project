@@ -1,0 +1,111 @@
+### CREATE five documents.
+POST http://localhost:3000/cards HTTP/1.1
+content-type: application/json
+
+{
+    "cardName": "Exosister Martha",
+    "level": 4,
+    "attribute": "Light",
+    "type": "Effect Monster",
+    "typing": "Spellcaster",
+    "atk": 1600,
+    "def": 800,
+    "date": "08-04-2022"
+}
+
+
+### CREATE 2
+POST http://localhost:3000/cards HTTP/1.1
+content-type: application/json
+
+{
+    "cardName": "Exosister Elis",
+    "level": 4,
+    "attribute": "Light",
+    "type": "Effect Monster",
+    "typing": "Spellcaster",
+    "atk": 500,
+    "def": 800,
+    "date": "01-27-2022"
+}
+
+### CREATE 3
+POST http://localhost:3000/cards HTTP/1.1
+content-type: application/json
+
+{
+    "cardName": "Exosister Stella",
+    "level": 4,
+    "attribute": "Light",
+    "type": "Effect Monster",
+    "typing": "Spellcaster",
+    "atk": 300,
+    "def": 800,
+    "date": "01-27-2022"
+}
+
+### CREATE 4
+POST http://localhost:3000/cards HTTP/1.1
+content-type: application/json
+
+{
+    "cardName": "Exosister Sophia",
+    "level": 4,
+    "attribute": "Light",
+    "type": "Effect Monster",
+    "typing": "Spellcaster",
+    "atk": 100,
+    "def": 800,
+    "date": "01-27-2022"
+}
+
+### CREATE 5
+POST http://localhost:3000/cards HTTP/1.1
+content-type: application/json
+
+{
+    "cardName": "Exosister Returnia",
+    "type": "Trap Card",
+    "typing": "Normal",
+    "date": "08-04-22"
+}
+
+
+### RETRIEVE all documents.
+GET http://localhost:3000/cards HTTP/1.1
+
+
+
+### RETRIEVE a document by its ID.
+### Replace the following ID with one that exists in the collection.
+GET http://localhost:3000/cards/656bfbe83ed24509b6ff35bf HTTP/1.1
+
+
+### UPDATE one document, by ID.
+### Replace the ID in the following request with one that exists
+### and update the card name, level, attribute, type, typing, atk, def, or date:
+PUT http://localhost:3000/cards/656bfbe83ed24509b6ff35bf HTTP/1.1
+content-type: application/json
+
+{
+    "cardName": "Exosister Marth",
+    "level": 4,
+    "attribute": "Light",
+    "type": "Effect Monster",
+    "typing": "Spellcaster",
+    "atk": 1600,
+    "def": 800,
+    "date": "08-04-2022"
+}
+
+### DELETE by ID (responds with nothing if successful):
+DELETE http://localhost:3000/cards/656bfbe83ed24509b6ff35bf HTTP/1.1
+
+
+
+### RETRIEVE all documents (responds with 4 or the original 5):
+GET http://localhost:3000/cards HTTP/1.1
+
+### POST count of all documents (responds with 4 or the original 5):
+POST http://localhost:3000/count HTTP/1.1
+
