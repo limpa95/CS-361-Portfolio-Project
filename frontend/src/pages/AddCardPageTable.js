@@ -16,7 +16,7 @@ export const AddCardPageTable = () => {
 
     const addCard = async () => {
         const newCard = { cardName, type, date, typing, attribute, level, atk, def };
-        const response = await fetch('https://patricks-backend.onrender.com/cards', {
+        const response = await fetch('https://green-link-427300-a0.uc.r.appspot.com/cards', {
             method: 'post',
             body: JSON.stringify(newCard),
             headers: {

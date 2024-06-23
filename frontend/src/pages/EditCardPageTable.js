@@ -15,7 +15,7 @@ export const EditCardPageTable = ({ cardToEdit }) => {
     const redirect = useNavigate();
 
     const editCard = async () => {
-        const response = await fetch(`https://patricks-backend.onrender.com/cards/${cardToEdit._id}`, {
+        const response = await fetch(`https://green-link-427300-a0.uc.r.appspot.com/cards/${cardToEdit._id}`, {
             method: 'PUT',
             body: JSON.stringify({ 
                 cardName: cardName, 

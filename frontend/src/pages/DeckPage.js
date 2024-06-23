@@ -15,7 +15,7 @@ function DeckPage({ setCard }) {
 
     // RETRIEVE the entire list of cards
     const loadDeck = async () => {
-        const response = await fetch('https://patricks-backend.onrender.com/cards');
+        const response = await fetch('https://green-link-427300-a0.uc.r.appspot.com/cards');
         const cards = await response.json();
         setCards(cards);
     } 
@@ -23,7 +23,7 @@ function DeckPage({ setCard }) {
     // Make HTTP request to retrieve name of selected card 
     let name = '';
     const onImgCard = async _id => {
-        const response = await fetch(`https://patricks-backend.onrender.com/cards/${_id}`);
+        const response = await fetch(`https://green-link-427300-a0.uc.r.appspot.com/cards/${_id}`);
         if (response.status === 200) {
             const cards = await response.json();
             name = cards.cardName;
@@ -66,7 +66,7 @@ function DeckPage({ setCard }) {
     let url = '';
     const [imgLink, setImgLink] = useState('https://ygopro.org/yugioh-card-maker/res/tcg/ygo/border/Normal.png');
     const showImg = async () => {
-        const response = await fetch(`https://patricks-backend.onrender.com/cardimg/${id}`);
+        const response = await fetch(`https://green-link-427300-a0.uc.r.appspot.com/cardimg/${id}`);
         if (response.status === 200) {
             const card = await response.json();
             url = card.imagePath;
@@ -92,9 +92,9 @@ function DeckPage({ setCard }) {
 
     // DELETE a single card  
     const onDeleteCard = async _id => {
-        const response = await fetch(`https://patricks-backend.onrender.com/cards/${_id}`, { method: 'DELETE'});
+        const response = await fetch(`https://green-link-427300-a0.uc.r.appspot.com/cards/${_id}`, { method: 'DELETE'});
         if (response.status === 200) {
-            const getResponse = await fetch('https://patricks-backend.onrender.com/cards');
+            const getResponse = await fetch('https://green-link-427300-a0.uc.r.appspot.com/cards');
             const cards = await getResponse.json();
             setCards(cards);
         } else {
@@ -104,9 +104,9 @@ function DeckPage({ setCard }) {
 
     //DELETE all cards in deck
     const deleteAll = async _id => {
-        const response = await fetch(`https://patricks-backend.onrender.com/cards`, { method: 'DELETE'});
+        const response = await fetch(`https://green-link-427300-a0.uc.r.appspot.com/cards`, { method: 'DELETE'});
         if (response.status === 200) {
-            const getResponse = await fetch('https://patricks-backend.onrender.com/cards');
+            const getResponse = await fetch('https://green-link-427300-a0.uc.r.appspot.com/cards');
             const cards = await getResponse.json();
             setCards(cards);
         } else {
