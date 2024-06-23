@@ -5,12 +5,16 @@ import express from 'express';
 import * as deck from './yugioh-deck-model.mjs';
 import cors from 'cors';
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(cors({origin: '*'}));
 app.options('*', cors({origin: '*'}))
 
 app.use(express.json());  // REST needs JSON MIME type.
+
+app.get('/_ah/warmup', (req, res) => {
+    res.sendStatus(200)
+});
 
 app.get('/', (req, res) => {
     res.sendStatus(200)
