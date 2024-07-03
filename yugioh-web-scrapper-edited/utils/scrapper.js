@@ -12,7 +12,7 @@ module.exports = async function findCard(searchString) {
             newSearchString += searchString[i];
         }
     }
-    url = 'https://ygoprodeck.com/card-database/?&name=' + newSearchString + '&num=24&offset=0';
+    url = 'https://ygoprodeck.com/card-database/?&name=' + newSearchString + '&num=100&offset=0';
     await page.goto(url);
 
     await new Promise(r => setTimeout(r, 8000));
