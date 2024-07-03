@@ -40,7 +40,7 @@ function DeckPage({ setCard }) {
     // Make POST request to partner's microservice using card name and receive document id containing img url
     let id = '';
     const cardImg = async () => {
-        const response = await fetch('https://image-microservice.onrender.com/findCard', {
+        const response = await fetch('https://symbolic-heaven-428217-f3.uc.r.appspot.com/findCard', {
             
             method: 'POST',
             body: JSON.stringify({'name': name}),
