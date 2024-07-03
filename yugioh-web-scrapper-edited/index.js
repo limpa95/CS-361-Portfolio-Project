@@ -44,6 +44,15 @@ mongoose.connect(process.env.MONGODB_CONNECT_STRING)
 
 const PORT = 4000
 app.listen(PORT, () => console.log('Server is running on ', PORT));
+
+app.get('/_ah/warmup', (req, res) => {
+    res.sendStatus(200)
+});
+
+app.get('/', (req, res) => {
+    res.sendStatus(200)
+ }); 
+
 app.post('/findCard', async (req, res) => {
     console.log('Received request to search for card name:', req.body.name)
     var response = await searchForCard(req.body.name)
