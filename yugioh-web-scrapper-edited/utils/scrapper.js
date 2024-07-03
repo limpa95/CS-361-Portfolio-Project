@@ -30,7 +30,7 @@ module.exports = async function findCard(searchString) {
         }, 10);
       }));
 
-    await new Promise(r => setTimeout(r, 750));
+    await new Promise(r => setTimeout(r, 1000));
 
     const cards = await page.evaluate(() => 
         Array.from(document.querySelectorAll('#api-area-results .item-area'), (e) => ({
