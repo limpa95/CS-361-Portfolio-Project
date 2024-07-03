@@ -15,7 +15,7 @@ module.exports = async function findCard(searchString) {
     url = 'https://ygoprodeck.com/card-database/?&name=' + newSearchString + '&num=100&offset=0';
     await page.goto(url);
 
-    await new Promise(r => setTimeout(r, 750));
+    await new Promise(r => setTimeout(r, 500));
 
     await page.evaluate(() => new Promise((resolve) => {
         var scrollTop = -1;
@@ -30,7 +30,7 @@ module.exports = async function findCard(searchString) {
         }, 10);
       }));
 
-    await new Promise(r => setTimeout(r, 1000));
+    await new Promise(r => setTimeout(r, 1500));
 
     const cards = await page.evaluate(() => 
         Array.from(document.querySelectorAll('#api-area-results .item-area'), (e) => ({
