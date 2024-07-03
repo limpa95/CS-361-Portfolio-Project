@@ -17,11 +17,7 @@ module.exports = async function findCard(searchString) {
 
     await new Promise(r => setTimeout(r, 8000));
 
-    await page.evaluate(() => {
-        for (let i = 0; i < document.body.scrollHeight; i+100) {
-           window.scrollTo(0, i)
-        }
-    });
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
 
     const cards = await page.evaluate(() => 
         Array.from(document.querySelectorAll('#api-area-results .item-area'), (e) => ({
