@@ -2,6 +2,7 @@ const puppeteer = require('puppeteer');
 
 module.exports = async function findCard(searchString) {
     const browser = await puppeteer.launch({
+        headless: true,
         args: ['--no-sandbox']
       });
     const page = await browser.newPage();
