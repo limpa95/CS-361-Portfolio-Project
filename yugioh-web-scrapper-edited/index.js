@@ -42,7 +42,7 @@ mongoose.connect(process.env.MONGODB_CONNECT_STRING)
     .then((result) => console.log('connected to db'))
     .catch((err) => console.log(err));
 
-const PORT = 4000
+const PORT = process.env.PORT || 4000
 app.listen(PORT, () => console.log('Server is running on ', PORT));
 
 app.get('/_ah/warmup', (req, res) => {
