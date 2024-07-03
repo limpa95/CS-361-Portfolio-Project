@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+const { scrollPageToBottom } = require('puppeteer-autoscroll-down');
 
 module.exports = async function findCard(searchString) {
     const browser = await puppeteer.launch();
@@ -17,7 +18,7 @@ module.exports = async function findCard(searchString) {
 
     await new Promise(r => setTimeout(r, 8000));
 
-    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+    await scrollPageToBottom(page, { size: 500 });
 
     const cards = await page.evaluate(() => 
         Array.from(document.querySelectorAll('#api-area-results .item-area'), (e) => ({
