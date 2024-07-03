@@ -21,7 +21,7 @@ module.exports = async function findCard(searchString) {
         Array.from(document.querySelectorAll('#api-area-results .item-area'), (e) => ({
             name: e.querySelector('.item-name h1').innerText,
             description: e.querySelector('.item-ability p').innerText,
-            imagePath: e.querySelector('.item-img img').getAttribute('data-src')
+            imagePath: e.querySelector('.item-img img').getAttribute('src')
         }))
     )
     var res = null;
