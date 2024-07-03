@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-import scrollPageToBottom from 'puppeteer-autoscroll-down';
+const { scrollPageToBottom } = require('puppeteer-autoscroll-down');
 
 module.exports = async function findCard(searchString) {
     const browser = await puppeteer.launch();
@@ -16,9 +16,9 @@ module.exports = async function findCard(searchString) {
     url = 'https://ygoprodeck.com/card-database/?&name=' + newSearchString + '&num=100&offset=0';
     await page.goto(url);
 
-    await new Promise(r => setTimeout(r, 8000));
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
 
-    await scrollPageToBottom(page, { size: 500 });
+    await new Promise(r => setTimeout(r, 8000));
 
     const cards = await page.evaluate(() => 
         Array.from(document.querySelectorAll('#api-area-results .item-area'), (e) => ({
