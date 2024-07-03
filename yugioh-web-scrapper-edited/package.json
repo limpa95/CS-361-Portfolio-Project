@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index"
+    "start": "node index",
+    "gcp-build": "npm run build && npx puppeteer browsers install chrome"
   },
   "keywords": [],
   "author": "",
